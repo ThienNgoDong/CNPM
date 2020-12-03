@@ -1,0 +1,300 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{% if current_user.is_authenticated %}
+{{ super() }}
+
+<h2>Báo cáo tổng kết môn</h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-1">
+        <div class="dropdown btn-group">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Môn học
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Toán</a></li>
+                <li><a href="#">Lí </a></li>
+                <li><a href="#">Hóa</a></li>
+                <li><a href="#">Sinh</a></li>
+                <li><a href="#">Anh</a></li>
+                <li><a href="#">Văn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <div class="dropdown btn-group">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Học kì
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Học kì 1</a></li>
+                <li><a href="#">Học kì 2</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<br>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Lớp</th>
+                <th scope="col">Sĩ số</th>
+                <th scope="col">Số lượng đạt</th>
+                <th scope="col">Số lượng đạt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>A1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>A2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>A3</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>A4</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>B1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>B2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>B3</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>C1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>C2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <canvas id="myChart" width="400" height="100"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'C1', 'C2'],
+                datasets: [{
+                    data: [23, 26, 15, 22, 20, 30, 23, 24, 17, 18],
+                    label: "Số lượng đạt",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Số lượng học sinh đạt của 1 lớp'
+
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Số lượng',
+                            fontStyle: 'bold',
+
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Lớp',
+                            fontStyle: 'bold',
+                        },
+                    }]
+                }
+            }
+        });
+    </script>
+
+
+    <h2>Báo cáo tổng học kì</h2>
+    <hr>
+
+    <div class="container">
+        <div class="dropdown pull-left">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Học kì
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Học kì 1</a></li>
+                <li><a href="#">Học kì 2</a></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Lớp</th>
+                <th scope="col">Sĩ số</th>
+                <th scope="col">Số lượng đạt</th>
+                <th scope="col">Số lượng đạt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>A1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>A2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>A3</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>A4</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>B1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>B2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>B3</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>C1</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>C2</td>
+                <td>32</td>
+                <td>23</td>
+                <td>71,2%</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <canvas id="myChartHK" width="400" height="100"></canvas>
+    <script>
+        var ctx = document.getElementById('myChartHK').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'C1', 'C2'],
+                datasets: [{
+                    data: [20, 28, 18, 20, 28, 27, 23, 24, 17, 18],
+                    label: "Số lượng đạt",
+                    borderColor: "#DC143C",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Số lượng học sinh đạt của 1 lớp'
+
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Số lượng',
+                            fontStyle: 'bold',
+
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Lớp',
+                            fontStyle: 'bold',
+                        },
+                    }]
+                }
+            }
+        });
+    </script>
+
+    {% else %}
+    {% include 'admin/login.html' %}
+    {% endif %}
+    {% endblock %}

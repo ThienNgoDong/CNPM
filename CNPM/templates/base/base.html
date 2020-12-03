@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MY PHONE STORE</title>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <!--Navigation-->
+        {% block nav %}
+            {% include 'base/nav.html' %}
+        {% endblock %}
+
+
+        <!--Header-->
+        {% block header %}
+            {% include 'base/header.html' %}
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+
+
+
+        <!--Footer-->
+        {% block footer %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+
+        
+    </body>
+</html>

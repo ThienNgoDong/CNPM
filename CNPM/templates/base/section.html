@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<section>
+    <div>
+        <h1 class="subject"><i class="fa fa-mobile"></i> Điện thoại</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="products">
+        {% for p in products %}
+        <div class="product">
+            <img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.name }}" />
+            <div class="info">
+                <h3>{{ p.name|to_uppercase() }}</h3>
+                <h4>{{ p.price }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+   
+</section>
+
+<section>
+    <div>
+        <h1 class="subject"><i class="fa fa-tablet"></i> Máy tính bảng</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="products">
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/phone/p5.png') }}" alt="phone" />
+            <div class="info">
+                <h3>iPhone X</h3>
+                <h4>29.000.000 VND</h4>
+            </div>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/phone/p6.png') }}" alt="phone" />
+            <div class="info">
+                <h3>iPhone X</h3>
+                <h4>29.000.000 VND</h4>
+            </div>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/phone/p1.png') }}" alt="phone" />
+            <div class="info">
+                <h3>iPhone X</h3>
+                <h4>29.000.000 VND</h4>
+            </div>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/phone/p1.png') }}" alt="phone" />
+            <div class="info">
+                <h3>iPhone X</h3>
+                <h4>29.000.000 VND</h4>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

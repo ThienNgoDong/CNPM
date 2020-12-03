@@ -1,0 +1,25 @@
+
+{% block body %}
+<div class="">
+    {% if err_msg %}
+    <div class="alert alert-danger">
+        {{ err_msg }}
+
+    </div>
+    {% endif %}
+    <form method="POST" action="{{ url_for('admin_login')}}">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control"/>
+        </div>  
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control"/>
+        </div> 
+        <div class="form-group">
+            <input type="submit"  value="LOGIN" class="btn btn-danger"/>
+        </div>   
+    </form>
+
+</div>
+{% endblock %}

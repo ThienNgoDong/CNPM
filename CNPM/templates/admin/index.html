@@ -1,0 +1,10 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    {% if current_user.is_authenticated %}
+    <h1 class="text-danger">QUẢN LÍ HỌC SINH</h1> 
+    {% else %} 
+    {% include 'admin/login.html' %}
+    {% endif %}
+{% endblock %}
+

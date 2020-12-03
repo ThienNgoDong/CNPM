@@ -1,0 +1,95 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+/* CSS HEADER */
+header > h1 {
+    text-align: center;
+    font-size: 56px;
+    color:gray;
+    text-shadow: 3px 4px 2px blue;
+}
+
+/* CSS CONTENT */
+section.cars {
+    overflow: auto; /* clearfix */
+}
+
+div.car {
+    width: 22%;
+    background-color:gray;
+    text-align: center;
+    padding: 0.5%;
+    margin: 1%;
+    border-radius: 10px;
+    float:left;
+}
+
+div.car > img {
+    width:100%;
+}
+
+/* CSS FOOTER */
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    /*clear: left;*/
+}
+
+footer a {
+    color: gray;
+}
+
+footer > h1, footer > p {
+    text-align: center;
+}
+
+.col25 {
+    width: 25%;
+}
+
+.col50 {
+    width: 50%;
+}
+
+div.contact {
+    overflow: auto;
+}
+
+div.contact > div {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
+table.msg {
+    width: 100%;
+}
+
+input[type=text] {
+    width: 95%;
+    padding: 5px;
+}
+textarea {
+    width: 98%;
+    padding:5px;
+    height: 50px;
+}
+
+input[type=submit] {
+    background-color: orange;
+    color:white;
+    padding: 10px;
+    border: 1px solid orange;
+}
+
+table.msg tr:last-child {
+    text-align: center;
+}
