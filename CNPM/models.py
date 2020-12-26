@@ -42,6 +42,17 @@ class User(db.Model, UserMixin):
     def __str__(self):
         return self.name
 
+
+
+class ListClass(db.Model):
+    __tablename__ = "listclass"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    classroom = Column(String(50), nullable=False)
+    siso =Column(Integer)
+
+    def __init__(self,classroom):
+        self.classroom = classroom
+
 class StudentProfile(db.Model):
     __tablename__ = "student"
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -50,17 +61,7 @@ class StudentProfile(db.Model):
     date = Column(Date, nullable=False)
     address = Column(String(250))
     email = Column(String(250))
-    
-class ListClass(db.Model):
-    __tablename__ = "listclass"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    classroom = Column(String(50), nullable=False)
-    stt = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
-    sex = Column(String(50), nullable=False)
-    date = Column(Date, nullable=False)
-    address = Column(String(250))
-
+    classroomID = Column(Integer,ForeignKey(ListClass.id), nullable=False)
 
 class Teacher(db.Model):
     __tablename__ = "teacher"
@@ -72,9 +73,21 @@ class Teacher(db.Model):
     status = Column(String(50))
     address = Column(String(250))
     phone =Column(String(12))
-    
 
- 
+class Subjects(db.Model):
+    __tablename__ = "subject"
+    id=Column(Integer, primary_key=True, autoincrement=True)
+    name =Column(String(50),nullable =False)
+    
+class Score(db.Model):
+    __tablename__ = "score"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    studentID = Column(Integer,ForeignKey(StudentProfile.id), nullable=False)
+    subjectID = Column(Integer,ForeignKey(Subjects.id), nullable=False)
+    Score15 = Column(Float, default=0)
+    Score1T = Column(Float, default=0)
+    semester = Column(String(10),nullable=False)
+    createDate = Column(Date, default=datetime.now())
 
 if __name__ == "__main__":
     db.create_all()

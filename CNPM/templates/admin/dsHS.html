@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                
+                <h2>Danh sách học sinh <b>{{classinfo.classroom}}</b> <button type="button" class="btn btn-success float-right"
+                    data-toggle="modal" data-target="#mymodal" >Add new</button></h2>
+                    
+
+
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Giới tính</th>
+                            <th scope="col">Ngày sinh</th>
+                            <th scope="col">Quê quán</th>
+                            <th scope="col">Email</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in listStudent %}
+                            <tr>
+                              <th scope="row">{{row.id}}</th>
+                              <td>{{row.name}}</td>
+                              <td>{{row.sex}}</td>
+                              <td>{{row.date}}</td>
+                              <td>{{row.address}}</td>
+                              <td>{{row.email}}</td>
+                             
+
+
+
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                    </table>
+                    
+            </div>
+
+            
+
+                                
+                           
+        </div>
+    </div>
+</div>
