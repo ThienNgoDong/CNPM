@@ -1,2 +1,2 @@
 # CNPM
-Phan hieu admin, viet bao cao
+Phan hieu admin, viet bao cao, alo
