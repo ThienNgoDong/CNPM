@@ -8,6 +8,7 @@ from flask_login import login_user
 from models import ListClass, StudentProfile
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import BaseView, expose
+from xu_ly.lophoc import cap_nhat_si_so
 
 
 @app.route("/")
@@ -52,11 +53,33 @@ def insertcourse():
         return redirect(url_for('transcript.index'))
 
 
-@app.route('/admin/listclass/liststudent/<id>', methods=['GET', 'POST'])
+@app.route('/admin/listclass/liststudent/<int:id>', methods=['GET', 'POST'])
 def liststudent(id):
     my_data = StudentProfile.query.filter(StudentProfile.classroomID == id)
     class_data = ListClass.query.get(id)
-    return render_template('admin/dsHS.html', listStudent=my_data , classinfo=class_data)
+    return render_template('admin/dsHS.html', listStudent=my_data, classinfo=class_data)
+
+
+@app.route("/admin/listclass/liststudent/addstudent/<int:id>", methods=['GET', 'POST'])
+def hs_chua_nhan_lop(id):
+    my_data = StudentProfile.query.filter(
+        StudentProfile.classroomID == None).all()
+    class_data = ListClass.query.get(id)
+
+    return render_template('lop_hoc/them_hoc_sinh.html', listStudent=my_data, classinfo=class_data)
+
+
+@app.route("/admin/listclass/liststudent/addstudent/add/<id>/<classroomID>", methods=['GET', 'POST'])
+def them_hocsinh_vao_lop(id=None, classroomID=None):
+
+    my_data = StudentProfile.query.get(id)
+
+    my_data.classroomID = classroomID
+    db.session.commit()
+    flash("Đã thêm học sinh vào lớp")
+    return redirect(url_for('hs_chua_nhan_lop', id=classroomID))
+    
+
 
 
 @login.user_loader

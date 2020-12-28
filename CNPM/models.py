@@ -61,7 +61,7 @@ class StudentProfile(db.Model):
     date = Column(Date, nullable=False)
     address = Column(String(250))
     email = Column(String(250))
-    classroomID = Column(Integer,ForeignKey(ListClass.id), nullable=False)
+    classroomID = Column(Integer,ForeignKey(ListClass.id),nullable=True)
 
 class Teacher(db.Model):
     __tablename__ = "teacher"
